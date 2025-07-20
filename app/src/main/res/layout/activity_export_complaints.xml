@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/bg_main">
+
+    <!-- Back Icon -->
+    <ImageView
+        android:id="@+id/backIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/ic_back"
+        android:contentDescription="Back"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:elevation="4dp"
+        tools:ignore="UseAppTint" />
+
+    <!-- Filter and Sort Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/filterSortCard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/backIcon"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="12dp"
+        card_view:cardCornerRadius="16dp"
+        card_view:cardElevation="6dp"
+        card_view:cardBackgroundColor="#FFFFFF">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Filter Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Filter Complaints"
+                android:textColor="#1E3A8A"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Filter Spinner -->
+            <Spinner
+                android:id="@+id/spinnerFilter"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/filter_options"
+                android:background="@drawable/spinner_background"
+                android:spinnerMode="dropdown"
+                android:layout_marginBottom="16dp"
+                android:popupBackground="#E6F0FA" />
+
+            <!-- Sort Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sort Complaints"
+                android:textColor="#1E3A8A"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Sort Spinner -->
+            <Spinner
+                android:id="@+id/spinnerSort"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:entries="@array/sort_options"
+                android:background="@drawable/spinner_background"
+                android:spinnerMode="dropdown"
+                android:popupBackground="#E6F0FA" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Export Button -->
+    <Button
+        android:id="@+id/btnExport"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_below="@id/filterSortCard"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="12dp"
+        android:text="Export to CSV"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:background="@drawable/button_gradient"
+        android:paddingHorizontal="24dp"
+        android:elevation="4dp" />
+
+    <!-- Complaints RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewComplaints"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/btnExport"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:background="@null"
+        android:clipToPadding="false"
+        android:paddingBottom="8dp" />
+
+</RelativeLayout>

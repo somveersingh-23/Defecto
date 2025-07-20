@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    card_view:cardCornerRadius="12dp"
+    card_view:cardElevation="4dp"
+    card_view:cardBackgroundColor="#F9FAFB"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@null">
+
+        <ImageView
+            android:id="@+id/complaintImageView"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="12dp"
+            android:background="#E5E7EB"
+            android:contentDescription="Complaint Image"
+            android:scaleType="centerCrop"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/complaintTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complaint Title"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="#1F2937"
+            android:layout_marginBottom="8dp" />
+
+        <TextView
+            android:id="@+id/complaintDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Complaint details go here"
+            android:textColor="#4B5563"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <Spinner
+            android:id="@+id/statusSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#D1D5DB"
+            android:spinnerMode="dropdown" />
+
+        <EditText
+            android:id="@+id/commentEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Add comment"
+            android:textColor="#1F2937"
+            android:textColorHint="#6B7280"
+            android:background="@android:drawable/edit_text"
+            android:padding="12dp"
+            android:layout_marginBottom="12dp"
+            android:backgroundTint="#D1D5DB" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end">
+
+            <Button
+                android:id="@+id/updateButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Update"
+                android:textColor="#FFFFFF"
+                android:background="#3B82F6"
+                android:paddingHorizontal="16dp"
+                android:layout_marginEnd="8dp"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif-medium" />
+
+            <Button
+                android:id="@+id/deleteButton"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:text="Delete"
+                android:textColor="#FFFFFF"
+                android:background="#EF4444"
+                android:paddingHorizontal="16dp"
+                android:textAllCaps="false"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

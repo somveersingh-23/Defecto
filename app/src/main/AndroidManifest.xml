@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Required Permissions -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- Legacy permissions (still required for lower Android versions) -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+    <!-- Special permission for Android 11+ -->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/app_icon_crr"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Defecto"
+        tools:targetApi="31">
+
+        <!-- Metadata entries -->
+        <meta-data
+            android:name="ADMIN_EMAIL"
+            android:value="crriapp@gmail.com" />
+        <meta-data
+            android:name="APP_PASSWORD"
+            android:value="zpehyxllrqsvknxb" />
+        <meta-data
+            android:name="GEMINI_API_KEY"
+            android:value="AIzaSyArHNPuIgMKg6a6Z8Uqhr0vBICh-YXekc0" />
+        <meta-data
+            android:name="IMGBB_API_KEY"
+            android:value="42d0e0f05b196ddc5794399facc62552" />
+
+        <!-- Google Maps API Key -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyBPtFcA-DBiBheWa8Uq-k4fRxk4l0nG7EE" />
+
+
+        <!-- Splash Activity as Launcher -->
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MyApp.Splash">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- Other Activities (No LAUNCHER intent-filter) -->
+        <activity android:name=".MainActivity" android:exported="true" />
+        <activity android:name=".LoginActivity" android:exported="true" />
+        <activity android:name=".SignUpActivity" android:exported="true" />
+        <activity android:name=".DashboardActivity" android:exported="true" />
+        <activity android:name=".ProfileInfoActivity" android:exported="true" />
+        <activity android:name=".ViewWebActivity" android:exported="true" />
+        <activity android:name=".StaffListActivity" android:exported="true" />
+        <activity android:name=".ViewMapActivity" android:exported="true" />
+        <activity android:name=".EditProfileActivity" android:exported="true" />
+        <activity android:name=".PostComplaintActivity" android:exported="true" />
+        <activity android:name=".MapPickerActivity" android:exported="true" />
+        <activity android:name=".SelectLocationActivity" android:exported="true" />
+        <activity android:name=".ChatActivity" android:exported="true" />
+        <activity android:name=".ForgotPasswordActivity" android:exported="true" />
+        <activity android:name=".ViewAdminPanelActivity" android:exported="true" />
+        <activity android:name=".AdminLoginActivity" android:exported="true" />
+        <activity android:name=".ForgotAdminPasswordActivity" android:exported="true" />
+        <activity android:name=".ViewComplaintStatusActivity" android:exported="true" />
+        <activity android:name=".ViewAllComplaintActivity" android:exported="true" />
+        <activity android:name=".ExportComplaintsActivity" android:exported="true" />
+        <activity android:name=".ManageComplaintsActivity" android:exported="true" />
+
+
+        <!-- Optional Fonts -->
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+    </application>
+</manifest>
